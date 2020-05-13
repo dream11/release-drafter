@@ -165,11 +165,11 @@ describe('release-drafter', () => {
             body => {
               expect(body).toMatchObject({
                 body: `Changes:
-* Add documentation (#5) @TimonVS
-* Update dependencies (#4) @TimonVS
-* Bug fixes (#3) @TimonVS
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
+* Add documentation (#5) @TimonVS -
+* Update dependencies (#4) @TimonVS -
+* Bug fixes (#3) @TimonVS -
+* Add big feature (#2) @TimonVS -
+* 👽 Add alien technology (#1) @TimonVS -
 
 Previous tag: ''
 `,
@@ -222,11 +222,11 @@ Previous tag: ''
               expect(body).toMatchObject({
                 body: `# What's Changed
 
-* Add documentation (#5) @TimonVS
-* Update dependencies (#4) @TimonVS
-* Bug fixes (#3) @TimonVS
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
+* Add documentation (#5) @TimonVS -
+* Update dependencies (#4) @TimonVS -
+* Bug fixes (#3) @TimonVS -
+* Add big feature (#2) @TimonVS -
+* 👽 Add alien technology (#1) @TimonVS -
 `,
                 draft: true,
                 tag_name: ''
@@ -276,11 +276,11 @@ Previous tag: ''
               expect(body).toMatchObject({
                 body: `# What's Changed
 
-* Add documentation (#5) @TimonVS
-* Update dependencies (#4) @TimonVS
-* Bug fixes (#3) @TimonVS
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
+* Add documentation (#5) @TimonVS -
+* Update dependencies (#4) @TimonVS -
+* Bug fixes (#3) @TimonVS -
+* Add big feature (#2) @TimonVS -
+* 👽 Add alien technology (#1) @TimonVS -
 `,
                 draft: true,
                 tag_name: ''
@@ -365,11 +365,11 @@ Previous tag: ''
               '/repos/toolmantim/release-drafter-test-project/releases',
               body => {
                 expect(body).toMatchObject({
-                  body: `* Change: #5 'Add documentation' @TimonVS
-* Change: #4 'Update dependencies' @TimonVS
-* Change: #3 'Bug fixes' @TimonVS
-* Change: #2 'Add big feature' @TimonVS
-* Change: #1 '👽 Add alien technology' @TimonVS`,
+                  body: `* Change: #5 'Add documentation' @TimonVS -
+* Change: #4 'Update dependencies' @TimonVS -
+* Change: #3 'Bug fixes' @TimonVS -
+* Change: #2 'Add big feature' @TimonVS -
+* Change: #1 '👽 Add alien technology' @TimonVS -`,
                   draft: true,
                   tag_name: ''
                 })
@@ -544,11 +544,11 @@ Previous tag: ''
               expect(body).toMatchObject({
                 body: `# What's Changed
 
-* Add documentation (#5) @TimonVS
-* Update dependencies (#4) @TimonVS
-* Bug fixes (#3) @TimonVS
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
+* Add documentation (#5) @TimonVS -
+* Update dependencies (#4) @TimonVS -
+* Bug fixes (#3) @TimonVS -
+* Add big feature (#2) @TimonVS -
+* 👽 Add alien technology (#1) @TimonVS -
 `
               })
               return true
@@ -590,17 +590,17 @@ Previous tag: ''
               expect(body).toMatchObject({
                 body: `# What's Changed
 
-* Add documentation (#5) @TimonVS
-* Update dependencies (#4) @TimonVS
+* Add documentation (#5) @TimonVS -
+* Update dependencies (#4) @TimonVS -
 
 ## 🚀 Features
 
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
+* Add big feature (#2) @TimonVS -
+* 👽 Add alien technology (#1) @TimonVS -
 
 ## 🐛 Bug Fixes
 
-* Bug fixes (#3) @TimonVS
+* Bug fixes (#3) @TimonVS -
 `,
                 draft: true,
                 tag_name: ''
@@ -642,17 +642,17 @@ Previous tag: ''
               expect(body).toMatchObject({
                 body: `# What's Changed
 
-* Add documentation (#5) @TimonVS
-* Update dependencies (#4) @TimonVS
+* Add documentation (#5) @TimonVS -
+* Update dependencies (#4) @TimonVS -
 
 ## 🚀 Features
 
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
+* Add big feature (#2) @TimonVS -
+* 👽 Add alien technology (#1) @TimonVS -
 
 ## 🐛 Bug Fixes
 
-* Bug fixes (#3) @TimonVS
+* Bug fixes (#3) @TimonVS -
 `,
                 draft: true,
                 tag_name: ''
@@ -812,16 +812,16 @@ Previous tag: ''
               expect(body).toMatchObject({
                 body: `# What's Changed
 
-* Update dependencies (#4) @TimonVS
+* Update dependencies (#4) @TimonVS -
 
 ## 🚀 Features
 
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
+* Add big feature (#2) @TimonVS -
+* 👽 Add alien technology (#1) @TimonVS -
 
 ## 🐛 Bug Fixes
 
-* Bug fixes (#3) @TimonVS
+* Bug fixes (#3) @TimonVS -
 `,
                 draft: true,
                 tag_name: ''
@@ -989,11 +989,11 @@ Previous tag: ''
                 expect(body).toMatchObject({
                   body: `# What's Changed
 
-* Add documentation (#5) @TimonVS
-* Update dependencies (#4) @TimonVS
-* Bug fixes (#3) @TimonVS
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
+* Add documentation (#5) @TimonVS -
+* Update dependencies (#4) @TimonVS -
+* Bug fixes (#3) @TimonVS -
+* Add big feature (#2) @TimonVS -
+* 👽 Add alien technology (#1) @TimonVS -
 `,
                   draft: true,
                   tag_name: ''
@@ -1040,11 +1040,11 @@ Previous tag: ''
                 expect(body).toMatchObject({
                   body: `# What's Changed
 
-* Add documentation (#10) @TimonVS
-* Update dependencies (#9) @TimonVS
-* Bug fixes (#8) @TimonVS
-* Add big feature (#7) @TimonVS
-* 👽 Add alien technology (#6) @TimonVS
+* Add documentation (#10) @TimonVS -
+* Update dependencies (#9) @TimonVS -
+* Bug fixes (#8) @TimonVS -
+* Add big feature (#7) @TimonVS -
+* 👽 Add alien technology (#6) @TimonVS -
 `,
                   draft: true,
                   tag_name: ''
@@ -1091,11 +1091,11 @@ Previous tag: ''
                 expect(body).toMatchObject({
                   body: `# What's Changed
 
-* Add documentation (#15) @TimonVS
-* Update dependencies (#14) @TimonVS
-* Bug fixes (#13) @TimonVS
-* Add big feature (#12) @TimonVS
-* 👽 Add alien technology (#11) @TimonVS
+* Add documentation (#15) @TimonVS -
+* Update dependencies (#14) @TimonVS -
+* Bug fixes (#13) @TimonVS -
+* Add big feature (#12) @TimonVS -
+* 👽 Add alien technology (#11) @TimonVS -
 `,
                   draft: true,
                   tag_name: ''
@@ -1206,11 +1206,11 @@ Previous tag: ''
               expect(body).toMatchObject({
                 body: `# What's Changed
 
-* Add documentation (#1000) @TimonVS
-* Update dependencies (#4) @TimonVS
-* Bug fixes (#3) @TimonVS
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
+* Add documentation (#1000) @TimonVS -
+* Update dependencies (#4) @TimonVS -
+* Bug fixes (#3) @TimonVS -
+* Add big feature (#2) @TimonVS -
+* 👽 Add alien technology (#1) @TimonVS -
 `,
                 draft: true,
                 tag_name: ''
