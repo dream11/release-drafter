@@ -365,11 +365,11 @@ Previous tag: ''
               '/repos/toolmantim/release-drafter-test-project/releases',
               body => {
                 expect(body).toMatchObject({
-                  body: `* Change: #5 'Add documentation' @TimonVS -
-* Change: #4 'Update dependencies' @TimonVS -
-* Change: #3 'Bug fixes' @TimonVS -
-* Change: #2 'Add big feature' @TimonVS -
-* Change: #1 '👽 Add alien technology' @TimonVS -`,
+                  body: `* Change: #5 'Add documentation' @TimonVS
+* Change: #4 'Update dependencies' @TimonVS
+* Change: #3 'Bug fixes' @TimonVS
+* Change: #2 'Add big feature' @TimonVS
+* Change: #1 '👽 Add alien technology' @TimonVS`,
                   draft: true,
                   tag_name: ''
                 })
