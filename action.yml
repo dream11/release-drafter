@@ -1,4 +1,4 @@
-name: 'Release Drafter'
+name: 'Release Drafter With Desc'
 description: 'Drafts your next release notes as pull requests are merged into master.'
 runs:
   using: 'docker'
