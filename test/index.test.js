@@ -170,6 +170,7 @@ describe('release-drafter', () => {
 * Bug fixes (#3) @TimonVS
 * Add big feature (#2) @TimonVS
 * 👽 Add alien technology (#1) @TimonVS
+
 Previous tag: ''
 `,
                 draft: true,
@@ -220,6 +221,7 @@ Previous tag: ''
             body => {
               expect(body).toMatchObject({
                 body: `# What's Changed
+
 * Add documentation (#5) @TimonVS
 * Update dependencies (#4) @TimonVS
 * Bug fixes (#3) @TimonVS
@@ -273,6 +275,7 @@ Previous tag: ''
             body => {
               expect(body).toMatchObject({
                 body: `# What's Changed
+
 * Add documentation (#5) @TimonVS
 * Update dependencies (#4) @TimonVS
 * Bug fixes (#3) @TimonVS
@@ -458,6 +461,7 @@ Previous tag: ''
             body => {
               expect(body).toMatchObject({
                 body: `# What's Changed
+
 * No changes
 `,
                 draft: true,
@@ -539,260 +543,13 @@ Previous tag: ''
             body => {
               expect(body).toMatchObject({
                 body: `# What's Changed
+
 * Add documentation (#5) @TimonVS
 * Update dependencies (#4) @TimonVS
 * Bug fixes (#3) @TimonVS
 * Add big feature (#2) @TimonVS
 * 👽 Add alien technology (#1) @TimonVS
 `
-              })
-              return true
-            }
-          )
-          .reply(200, require('./fixtures/release'))
-
-        await probot.receive({
-          name: 'push',
-          payload: require('./fixtures/push')
-        })
-
-        expect.assertions(1)
-      })
-    })
-
-    describe('with categories config', () => {
-      it('categorizes pull requests with single label', async () => {
-        getConfigMock('config-with-categories.yml')
-
-        nock('https://api.github.com')
-          .get('/repos/toolmantim/release-drafter-test-project/releases')
-          .query(true)
-          .reply(200, [require('./fixtures/release')])
-
-        nock('https://api.github.com')
-          .post('/graphql', body =>
-            body.query.includes('query findCommitsWithAssociatedPullRequests')
-          )
-          .reply(
-            200,
-            require('./fixtures/__generated__/graphql-commits-merge-commit.json')
-          )
-
-        nock('https://api.github.com')
-          .post(
-            '/repos/toolmantim/release-drafter-test-project/releases',
-            body => {
-              expect(body).toMatchObject({
-                body: `# What's Changed
-* Add documentation (#5) @TimonVS
-* Update dependencies (#4) @TimonVS
-## 🚀 Features
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
-## 🐛 Bug Fixes
-* Bug fixes (#3) @TimonVS
-`,
-                draft: true,
-                tag_name: ''
-              })
-              return true
-            }
-          )
-          .reply(200, require('./fixtures/release'))
-
-        await probot.receive({
-          name: 'push',
-          payload: require('./fixtures/push')
-        })
-
-        expect.assertions(1)
-      })
-
-      it('categorizes pull requests with multiple labels', async () => {
-        getConfigMock('config-with-categories-2.yml')
-
-        nock('https://api.github.com')
-          .get('/repos/toolmantim/release-drafter-test-project/releases')
-          .query(true)
-          .reply(200, [require('./fixtures/release')])
-
-        nock('https://api.github.com')
-          .post('/graphql', body =>
-            body.query.includes('query findCommitsWithAssociatedPullRequests')
-          )
-          .reply(
-            200,
-            require('./fixtures/__generated__/graphql-commits-merge-commit.json')
-          )
-
-        nock('https://api.github.com')
-          .post(
-            '/repos/toolmantim/release-drafter-test-project/releases',
-            body => {
-              expect(body).toMatchObject({
-                body: `# What's Changed
-* Add documentation (#5) @TimonVS
-* Update dependencies (#4) @TimonVS
-## 🚀 Features
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
-## 🐛 Bug Fixes
-* Bug fixes (#3) @TimonVS
-`,
-                draft: true,
-                tag_name: ''
-              })
-              return true
-            }
-          )
-          .reply(200, require('./fixtures/release'))
-
-        await probot.receive({
-          name: 'push',
-          payload: require('./fixtures/push')
-        })
-
-        expect.assertions(1)
-      })
-
-      it('categorizes pull requests with overlapping labels', async () => {
-        getConfigMock('config-with-categories-3.yml')
-
-        nock('https://api.github.com')
-          .get('/repos/toolmantim/release-drafter-test-project/releases')
-          .query(true)
-          .reply(200, [require('./fixtures/release')])
-
-        nock('https://api.github.com')
-          .post('/graphql', body =>
-            body.query.includes('query findCommitsWithAssociatedPullRequests')
-          )
-          .reply(
-            200,
-            require('./fixtures/__generated__/graphql-commits-overlapping-label.json')
-          )
-
-        nock('https://api.github.com')
-          .post(
-            '/repos/toolmantim/release-drafter-test-project/releases',
-            body => {
-              expect(body).toMatchInlineSnapshot(`
-                Object {
-                  "body": "# What's Changed
-                * Add documentation (#22) @casz
-                * Update dependencies (#21) @casz
-                ## 🚀 Features
-                * Add big feature (#19) @casz
-                * Add alien technology (#18) @casz
-                ## 🐛 Bug Fixes
-                * Bug fixes (#20) @casz
-                ",
-                  "draft": true,
-                  "name": "",
-                  "prerelease": false,
-                  "tag_name": "",
-                }
-              `)
-              return true
-            }
-          )
-          .reply(200, require('./fixtures/release'))
-
-        await probot.receive({
-          name: 'push',
-          payload: require('./fixtures/push')
-        })
-
-        expect.assertions(1)
-      })
-
-      it('categorizes pull requests with overlapping labels into multiple categories', async () => {
-        getConfigMock('config-with-categories-4.yml')
-
-        nock('https://api.github.com')
-          .get('/repos/toolmantim/release-drafter-test-project/releases')
-          .query(true)
-          .reply(200, [require('./fixtures/release')])
-
-        nock('https://api.github.com')
-          .post('/graphql', body =>
-            body.query.includes('query findCommitsWithAssociatedPullRequests')
-          )
-          .reply(
-            200,
-            require('./fixtures/__generated__/graphql-commits-overlapping-label.json')
-          )
-
-        nock('https://api.github.com')
-          .post(
-            '/repos/toolmantim/release-drafter-test-project/releases',
-            body => {
-              expect(body).toMatchInlineSnapshot(`
-                Object {
-                  "body": "# What's Changed
-                * Add documentation (#22) @casz
-                * Update dependencies (#21) @casz
-                ## 🚀 Features
-                * Add big feature (#19) @casz
-                * Add alien technology (#18) @casz
-                ## 🐛 Bug Fixes
-                * Bug fixes (#20) @casz
-                ## 🎖️ Sentry
-                * Bug fixes (#20) @casz
-                ",
-                  "draft": true,
-                  "name": "",
-                  "prerelease": false,
-                  "tag_name": "",
-                }
-              `)
-              return true
-            }
-          )
-          .reply(200, require('./fixtures/release'))
-
-        await probot.receive({
-          name: 'push',
-          payload: require('./fixtures/push')
-        })
-
-        expect.assertions(1)
-      })
-    })
-
-    describe('with exclude-labels config', () => {
-      it('excludes pull requests', async () => {
-        getConfigMock('config-with-exclude-labels.yml')
-
-        nock('https://api.github.com')
-          .get('/repos/toolmantim/release-drafter-test-project/releases')
-          .query(true)
-          .reply(200, [require('./fixtures/release')])
-
-        nock('https://api.github.com')
-          .post('/graphql', body =>
-            body.query.includes('query findCommitsWithAssociatedPullRequests')
-          )
-          .reply(
-            200,
-            require('./fixtures/__generated__/graphql-commits-merge-commit.json')
-          )
-
-        nock('https://api.github.com')
-          .post(
-            '/repos/toolmantim/release-drafter-test-project/releases',
-            body => {
-              expect(body).toMatchObject({
-                body: `# What's Changed
-* Update dependencies (#4) @TimonVS
-## 🚀 Features
-* Add big feature (#2) @TimonVS
-* 👽 Add alien technology (#1) @TimonVS
-## 🐛 Bug Fixes
-* Bug fixes (#3) @TimonVS
-`,
-                draft: true,
-                tag_name: ''
               })
               return true
             }
@@ -956,6 +713,7 @@ Previous tag: ''
               body => {
                 expect(body).toMatchObject({
                   body: `# What's Changed
+
 * Add documentation (#5) @TimonVS
 * Update dependencies (#4) @TimonVS
 * Bug fixes (#3) @TimonVS
@@ -1006,6 +764,7 @@ Previous tag: ''
               body => {
                 expect(body).toMatchObject({
                   body: `# What's Changed
+
 * Add documentation (#10) @TimonVS
 * Update dependencies (#9) @TimonVS
 * Bug fixes (#8) @TimonVS
@@ -1056,6 +815,7 @@ Previous tag: ''
               body => {
                 expect(body).toMatchObject({
                   body: `# What's Changed
+
 * Add documentation (#15) @TimonVS
 * Update dependencies (#14) @TimonVS
 * Bug fixes (#13) @TimonVS
@@ -1108,6 +868,7 @@ Previous tag: ''
             body => {
               expect(body).toMatchObject({
                 body: `# What's Changed
+
 * Added great distance (#16) @toolmantim
 * Oh hai (#15) @toolmantim
 * ❤️ Add MOAR THINGS (#14) @toolmantim
@@ -1169,6 +930,7 @@ Previous tag: ''
             body => {
               expect(body).toMatchObject({
                 body: `# What's Changed
+
 * Add documentation (#1000) @TimonVS
 * Update dependencies (#4) @TimonVS
 * Bug fixes (#3) @TimonVS
@@ -1221,6 +983,7 @@ Previous tag: ''
           body => {
             expect(body).toMatchObject({
               body: `# What's Changed
+
 * 🤖 Add robots (#12) @toolmantim
 * 🙅🏼‍♂️ 🐄 (#5) @toolmantim
 * 👽 Integrate Alien technology (#8) @toolmantim
@@ -1283,6 +1046,7 @@ Previous tag: ''
           body => {
             expect(body).toMatchObject({
               body: `# What's Changed
+
 * Create new-feature.md (#1) @toolmantim
 * Adds a new Widgets API (#2) @toolmantim
 * 🐒 Add monkeys technology (#3) @toolmantim
