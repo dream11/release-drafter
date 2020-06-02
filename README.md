@@ -24,7 +24,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Drafts your next Release notes as Pull Requests are merged into "master"
-      - uses: release-drafter/release-drafter@v5
+      - uses: dream11/release-drafter@v6
         with:
           # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
           # config-name: my-config.yml
@@ -59,18 +59,35 @@ The following is a more complicated configuration, which categorises the changes
 name-template: 'v$NEXT_PATCH_VERSION 🌈'
 tag-template: 'v$NEXT_PATCH_VERSION'
 categories:
-  - title: '🚀 Features'
+  - title: 'Features'
     labels:
       - 'feature'
       - 'enhancement'
-  - title: '🐛 Bug Fixes'
+      - 'feat'
+  - title: 'Improvements'
+    labels:
+      - 'perf'
+      - 'refactor'
+  - title: 'Tests'
+    labels:
+      - 'tests'
+      - 'testing'
+  - title: 'Fixes'
     labels:
       - 'fix'
       - 'bugfix'
       - 'bug'
-  - title: '🧰 Maintenance'
-    label: 'chore'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+      - 'hotfix'
+      - 'revert'
+  - title: 'Chores'
+    labels:
+      - 'docs'
+      - 'chore'
+      - 'style'
+      - 'build'
+      - 'chores'
+      - 'ci'
+change-template:'- [ ] #$NUMBER $TITLE - @$AUTHOR $DESC '
 template: |
   ## Changes
 
