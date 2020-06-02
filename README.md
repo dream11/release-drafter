@@ -8,9 +8,12 @@
 
 ## Original Fork Repo
 
-https://github.com/release-drafter/release-drafter
+This is a fork of [release-drafter#74d04fd](https://github.com/release-drafter/release-drafter/commit/74d04fd)
 
-Forked from this Commit Id: 74d04fd
+Difference with the original fork
+
+1. PR description is fetched and is available in the template for using
+2. Categories are derived from PR title instead of Github labels.
 
 ## Usage
 
