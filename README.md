@@ -6,6 +6,12 @@
 
 ---
 
+## Original Fork Repo
+
+https://github.com/release-drafter/release-drafter
+
+Forked from this Commit Id: 74d04fd
+
 ## Usage
 
 You can use the [Release Drafter GitHub Action](https://github.com/marketplace/actions/release-drafter) in a [GitHub Actions Workflow](https://help.github.com/en/articles/about-github-actions) by configuring a YAML-based workflow file, e.g. `.github/workflows/release-drafter.yml`, with the following:
@@ -24,7 +30,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       # Drafts your next Release notes as Pull Requests are merged into "master"
-      - uses: release-drafter/release-drafter@v5
+      - uses: dream11/release-drafter@v6
         with:
           # (Optional) specify config name to use, relative to .github/. Default: release-drafter.yml
           # config-name: my-config.yml
