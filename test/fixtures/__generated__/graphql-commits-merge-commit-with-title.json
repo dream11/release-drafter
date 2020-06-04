@@ -1,0 +1,451 @@
+{
+  "data": {
+    "repository": {
+      "ref": {
+        "target": {
+          "history": {
+            "totalCount": 16,
+            "pageInfo": {
+              "hasNextPage": false,
+              "endCursor": "00de634cb5f3c0b854eb30b0afe5b1816e372ed3 15"
+            },
+            "nodes": [
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOjAwZGU2MzRjYjVmM2MwYjg1NGViMzBiMGFmZTViMTgxNmUzNzJlZDM=",
+                "message": "Merge pull request #5 from TimonVS/add-documentation\n\nAdd documentation",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "feature: Add documentation @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 5,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:12:08Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "skip-changelog"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOmQ4NTg3ZmRiMjYzNjM5Zjc2NTYxMjQ2ZDUzN2UwNDE4YTJmODZhZWU=",
+                "message": "Merge pull request #4 from TimonVS/chore/update-dependencies\n\nUpdate dependencies",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "enhancement: Update dependencies @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 4,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:55Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOjI1MzQ0MDhmZWI4MzZkYWNjNTFlYzdjMGFmNGYyNDdlN2JlMzlkNzQ=",
+                "message": "Merge pull request #3 from TimonVS/fix/bug-fixes\n\nBug fixes",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "fix: Bug fixes @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 3,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:47Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "fix"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOjQ4ZTkwNTYwNWQ4ODkyNWI1MjJjMmIwMGY2NDZmNzQ0ZmQ5NzZkMjE=",
+                "message": "Merge pull request #2 from TimonVS/feature/big-feature\n\nAdd big feature",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "feature: Add big feature @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 2,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:39Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "feature"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOjVmNTViZThiOTA2M2IzOWQ5Y2VkYzllNWRkOGZkMDIyMjFiZDMxZjQ=",
+                "message": "Merge pull request #1 from TimonVS/feature/alien-technology\n\n👽 Add alien technology",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "feature: Add alien technology @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 1,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:29Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "feature"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOjg1ODExZmJkYmE2OTViYjk3ZDc3YTVlMmE5NjNiMzFmNTM4YTgyMjM=",
+                "message": "Fix typo",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "feature: Add documentation @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 5,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:12:08Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "skip-changelog"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOmVkM2FmY2QzNmM4MDhlZWIxNWFhZjc0Zjg3MTNiODVkZTA2ZjBhMTk=",
+                "message": "Add documentation",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "feature: Add documentation @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 5,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:12:08Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "skip-changelog"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOmQyMTM0MjNmOTBjZjU5Y2YxMmRiNmUwMTIxYjgwNzE1NTE4NGRiNmQ=",
+                "message": "Update Mongoose to 5.5.4",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "fix: Update dependencies @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 4,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:55Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOmQ5NTJjMjU1MDI5N2E4NTE1MmJlMWM4MjYwYjI1ZmI4OWYyODFkNDk=",
+                "message": "Update Express to 4.16.4",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "fix: Update dependencies @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 4,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:55Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": []
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOjFiYmJiM2FhYWFmMTk3MDYyYmRmMjg2ODhiMDk4NTI0NjcxM2NkMTI=",
+                "message": "Fixed another bug",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "fix: Bug fixes @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 3,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:47Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "fix"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOjNlOGE5YTc4ODA3MmRiZDcyMmMxZTkzYTU0NzEzYzI5NzEyNjI5MDY=",
+                "message": "Fixed a bug",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "fix: Bug fixes @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 3,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:47Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "fix"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOmI0YWZlNDc3YTZlMmU0OWFmYzdhYTU1ZWYwODMyOTU4MWJmODRiNDM=",
+                "message": "Adjust parameters",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "feature: Add big feature @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 2,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:39Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "feature"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOmQwMWJjZmNjNzczMWRlYzNiOTg2OWY5ZTFkYTYwMjlhYTY2NzcyNDA=",
+                "message": "Add big feature",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "feature: Add big feature @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 2,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:39Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "feature"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOjk0ZGViYjMwZTAyYjExNTc1YWQ0YzBmMDNmMWE1ZjdmOTJiMTFiMjg=",
+                "message": "Add alien technology",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": [
+                    {
+                      "title": "feature: 👽 Add alien technology @tester https://abc.atlassian.net/browse/DWP-37",
+                      "number": 1,
+                      "author": {
+                        "login": "TimonVS"
+                      },
+                      "mergedAt": "2019-04-27T13:11:29Z",
+                      "isCrossRepository": false,
+                      "labels": {
+                        "nodes": [
+                          {
+                            "name": "feature"
+                          }
+                        ]
+                      }
+                    }
+                  ]
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOjNhYmJhNTkxOGZmN2QxMmZhYjMyMjA1N2ZiZGMyM2I1MzVlNzZkMDE=",
+                "message": "Add project description to README",
+                "author": {
+                  "name": "Ada Lovelace",
+                  "user": null
+                },
+                "associatedPullRequests": {
+                  "nodes": []
+                }
+              },
+              {
+                "id": "MDY6Q29tbWl0MTgzNzY2OTUzOmI5YWI2MGVlNGI4ZjNmYTg0Mjg2NDQ0NjViZGI1YTg4ZDcyZTY1M2E=",
+                "message": "Initial commit",
+                "author": {
+                  "name": "Timon van Spronsen",
+                  "user": {
+                    "login": "TimonVS"
+                  }
+                },
+                "associatedPullRequests": {
+                  "nodes": []
+                }
+              }
+            ]
+          }
+        }
+      }
+    }
+  }
+}

@@ -68,18 +68,35 @@ The following is a more complicated configuration, which categorises the changes
 name-template: 'v$NEXT_PATCH_VERSION 🌈'
 tag-template: 'v$NEXT_PATCH_VERSION'
 categories:
-  - title: '🚀 Features'
+  - title: 'Features'
     labels:
       - 'feature'
       - 'enhancement'
-  - title: '🐛 Bug Fixes'
+      - 'feat'
+  - title: 'Improvements'
+    labels:
+      - 'perf'
+      - 'refactor'
+  - title: 'Tests'
+    labels:
+      - 'tests'
+      - 'testing'
+  - title: 'Fixes'
     labels:
       - 'fix'
       - 'bugfix'
       - 'bug'
-  - title: '🧰 Maintenance'
-    label: 'chore'
-change-template: '- $TITLE @$AUTHOR (#$NUMBER)'
+      - 'hotfix'
+      - 'revert'
+  - title: 'Chores'
+    labels:
+      - 'docs'
+      - 'chore'
+      - 'style'
+      - 'build'
+      - 'chores'
+      - 'ci'
+change-template:'- [ ] #$NUMBER $TITLE - @$AUTHOR $DESC '
 template: |
   ## Changes
 
@@ -147,6 +164,8 @@ You can use any of the following variables in `change-template`:
 | `$NUMBER` | The number of the pull request, e.g. `42`.                  |
 | `$TITLE`  | The title of the pull request, e.g. `Add alien technology`. |
 | `$AUTHOR` | The pull request author’s username, e.g. `gracehopper`.     |
+| `$DESC`   | The description of the pull request with QA and JIRA ticket |
+|           | e.g.`@tester1 https://abc.atlassian.net/browse/DW-37`.      |
 
 ## Categorize Pull Requests
 
@@ -154,13 +173,34 @@ With the `categories` option you can categorize pull requests in release notes u
 
 ```yml
 categories:
-  - title: '🚀 Features'
-    label: 'feature'
-  - title: '🐛 Bug Fixes'
+ - title: 'Features'
+    labels:
+      - 'feature'
+      - 'enhancement'
+      - 'feat'
+  - title: 'Improvements'
+    labels:
+      - 'perf'
+      - 'refactor'
+  - title: 'Tests'
+    labels:
+      - 'tests'
+      - 'testing'
+  - title: 'Fixes'
     labels:
       - 'fix'
       - 'bugfix'
       - 'bug'
+      - 'hotfix'
+      - 'revert'
+  - title: 'Chores'
+    labels:
+      - 'docs'
+      - 'chore'
+      - 'style'
+      - 'build'
+      - 'chores'
+      - 'ci'
 ```
 
 Pull requests with the label "feature" or "fix" will now be grouped together:
