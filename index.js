@@ -27,9 +27,6 @@ module.exports = app => {
 
     const branch = ref.replace(/^refs\/heads\//, '')
 
-    console.log('branch :', branch)
-    console.log('config.branches : ', config.branches)
-
     if (!isTriggerableBranch({ branch, app, context, config })) {
       return
     }
