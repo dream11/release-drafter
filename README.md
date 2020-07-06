@@ -14,6 +14,7 @@ Difference with the original fork
 
 1. PR description is fetched and is available in the template for using
 2. Categories are derived from PR title instead of Github labels.
+3. [Config](https://github.com/dream11/release-drafter#configuration-options) `branches` supports wildcard.
 
 ## Usage
 
