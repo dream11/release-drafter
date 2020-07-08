@@ -668,6 +668,61 @@ Previous tag: ''
 
         expect.assertions(1)
       })
+
+      it('categorizes pull requests with multiple labels with description', async () => {
+        getConfigMock('config-with-categories-description.yml')
+
+        nock('https://api.github.com')
+          .get('/repos/toolmantim/release-drafter-test-project/releases')
+          .query(true)
+          .reply(200, [require('./fixtures/release')])
+
+        nock('https://api.github.com')
+          .post('/graphql', body =>
+            body.query.includes('query findCommitsWithAssociatedPullRequests')
+          )
+          .reply(
+            200,
+            require('./fixtures/__generated__/graphql-commits-merge-commit-with-title.json')
+          )
+
+        nock('https://api.github.com')
+          .post(
+            '/repos/toolmantim/release-drafter-test-project/releases',
+            body => {
+              console.log('body : ', body)
+
+              expect(body).toMatchObject({
+                body: `# What's Changed
+
+## 🚀 Features
+
+* feature: Add documentation @tester https://abc.atlassian.net/browse/DWP-37 (#5) @TimonVS
+ - https://abc.atlassian.net/browse/DWP-123
+ - https://abc.atlassian.net/browse/DWP-456
+* enhancement: Update dependencies @tester https://abc.atlassian.net/browse/DWP-37 (#4) @TimonVS
+* feature: Add big feature @tester https://abc.atlassian.net/browse/DWP-37 (#2) @TimonVS
+* feature: Add alien technology @tester https://abc.atlassian.net/browse/DWP-37 (#1) @TimonVS
+
+## 🐛 Bug Fixes
+
+* fix: Bug fixes @tester https://abc.atlassian.net/browse/DWP-37 (#3) @TimonVS
+`,
+                draft: true,
+                tag_name: ''
+              })
+              return true
+            }
+          )
+          .reply(200, require('./fixtures/release'))
+
+        await probot.receive({
+          name: 'push',
+          payload: require('./fixtures/push')
+        })
+
+        expect.assertions(1)
+      })
     })
 
     describe('with version-template config', () => {
