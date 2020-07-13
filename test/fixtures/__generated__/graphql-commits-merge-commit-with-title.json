@@ -23,6 +23,7 @@
                   "nodes": [
                     {
                       "title": "feature: Add documentation @tester https://abc.atlassian.net/browse/DWP-37",
+                      "body": "[Ticket 1 description](https://abc.atlassian.net/browse/DWP-123)\n[Ticket 2 Description](https://abc.atlassian.net/browse/DWP-456)",
                       "number": 5,
                       "author": {
                         "login": "TimonVS"
