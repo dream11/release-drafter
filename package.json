@@ -42,7 +42,7 @@
     "mocked-env": "^1.3.2",
     "nock": "12.0.3",
     "nock-knock": "2.0.0",
-    "node-fetch": "2.6.0",
+    "node-fetch": "2.6.7",
     "nodemon": "2.0.2",
     "prettier": "1.19.1",
     "smee-client": "1.1.0"
